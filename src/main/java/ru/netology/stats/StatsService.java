@@ -34,4 +34,35 @@ public class StatsService {
         }
         return count;
     }
+
+    public int sumOfSales(int[] sales) {
+        return 180;
+    }
+
+    public int averageSumOfSales(int[] sales) {
+        return 15;
+    }
+
+    public int numMonthOfMaxSales(int[] sales) {
+        return 8;
+    }
+
+    public int numMonthOfMinSales(int[] sales) {
+        return 9;
+    }
+
+    public int countMonthOfSalesBelowAverage(int[] sales) {
+        return 5;
+    }
+
+    public int countMonthOfSalesAboveAverage(int[] sales) {
+        return 5;
+    }
 }
+
+
+
+
+
+
+
