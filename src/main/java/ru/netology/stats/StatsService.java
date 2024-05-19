@@ -48,26 +48,26 @@ public class StatsService {
 
     //количество месяцев, в которых продажи были ниже среднего
     public int salesBelowAverage(int[] sales) {
-        int SumMonth = 0;
+        int sumMonth = 0;
         long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
-                SumMonth = SumMonth + 1;
+                sumMonth = sumMonth + 1;
             }
         }
-        return SumMonth;
+        return sumMonth;
     }
 
     //количество месяцев, в которых продажи были выше среднего
     public int salesHigherAverage(int[] sales) {
-        int SumMonths = 0;
+        int sumMonths = 0;
         long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avg) {
-                SumMonths = SumMonths + 1;
+                sumMonths = sumMonths + 1;
             }
         }
-        return SumMonths;
+        return sumMonths;
     }
 }
 
