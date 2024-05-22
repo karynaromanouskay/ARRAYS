@@ -1,40 +1,37 @@
-package ru.netology.stats;
-
+package ru.netology;
 
 public class StatsService {
-    //Сумма всех продаж
-
-    public int sumOfAllSales(int[] sales) {
+    public int sumOfAllSales(long[] sales) {
         int summa = 0;
         for (int i = 0; i < sales.length; i++) {
-            summa = summa + sales[i];
+            summa = (int) (summa + sales[i]);
         }
         return summa;
     }
 
     // средняя сумма продаж в месяц
-    public int averageSalesMonth(int[] sales) {
+    public int averageSalesMonth(long[] sales) {
         int summa = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            summa = summa + sales[i];
+            summa = (int) (summa + sales[i]);
         }
         return summa = summa / sales.length;
     }
-
     //номер месяца, в котором был пик продаж
-    public int maxSales(int[] sales) {
-        int MaxMonth = 0;
+    public int maxSales(long[] sales) {
+        int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[MaxMonth]) {
-                MaxMonth = i;
+            if (sales[i] >= sales[maxMonth]) {
+                maxMonth = i;
             }
         }
-        return MaxMonth + 1;
+        return maxMonth + 1;
     }
 
+
     //номер месяца, в котором был минимум продаж
-    public int minSales(int[] sales) {
+    public int minSales(long[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -47,32 +44,27 @@ public class StatsService {
     }
 
     //количество месяцев, в которых продажи были ниже среднего
-    public int salesBelowAverage(int[] sales) {
-        int sumMonth = 0;
+    public int salesBelowAverage(long[] sales) {
+        long sumMonth = 0;
         long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
                 sumMonth = sumMonth + 1;
             }
         }
-        return sumMonth;
+        return (int) sumMonth;
     }
 
+
     //количество месяцев, в которых продажи были выше среднего
-    public int salesHigherAverage(int[] sales) {
-        int sumMonths = 0;
+    public int salesHigherAverage(long[] sales) {
+        long sumMonths = 0;
         long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avg) {
                 sumMonths = sumMonths + 1;
             }
         }
-        return sumMonths;
+        return (int) sumMonths;
     }
 }
-
-
-
-
-
-
